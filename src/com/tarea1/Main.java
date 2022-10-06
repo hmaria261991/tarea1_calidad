@@ -12,17 +12,35 @@ public class Main {
         System.out.println("Ingresa un año para validar si es bisiesto o no");
         System.out.println("***************************************************");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        int anno = Integer.parseInt(reader.readLine());
-        isLeapYear(anno);
-        System.out.println(anno);
+        String num = reader.readLine();
+        int year = 0;
+        System.out.println("Validando si el año ingresado es valido");
+        System.out.println("...");
+        System.out.println("Desea continuar?");
+        System.out.println("1. Si");
+        System.out.println("2. No");
+        String answer = reader.readLine();
+        try{
+            if (answer != null && answer !="" && answer == "1"){}
+            if(num != ""){
+                year = Integer.parseInt(num);
+            }
+            if(year != 0 && year > 0){
+                isLeapYear(year);
+            }else{
+                System.out.println("El valor ingresado no es valido");
+            }
+        }catch (Exception e){
+            System.out.println("Solicitud invalida");
+        }
     }
 
-    public static void isLeapYear(int anno){
+    public static void isLeapYear(int year){
         GregorianCalendar calendar = new GregorianCalendar();
-        if (calendar.isLeapYear(anno)) {
-            System.out.println("El año " + anno + " es bisiesto");
+        if (calendar.isLeapYear(year)) {
+            System.out.println("El año " + year + " es bisiesto");
         } else {
-            System.out.println("El año " + anno + " no es bisiesto");
+            System.out.println("El año " + year + " no es bisiesto");
         }
     }
 }
