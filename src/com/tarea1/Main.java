@@ -21,14 +21,17 @@ public class Main {
         System.out.println("2. No");
         String answer = reader.readLine();
         try{
-            if (answer != null && answer !="" && answer == "1"){}
-            if(num != ""){
-                year = Integer.parseInt(num);
-            }
-            if(year != 0 && year > 0){
-                isLeapYear(year);
+            if (answer != null && answer !="" && answer == "1"){
+                if(num != ""){
+                    year = Integer.parseInt(num);
+                }
+                if(year != 0 && year > 0){
+                    isLeapYear(year);
+                }else{
+                    System.out.println("El valor ingresado no es valido");
+                }
             }else{
-                System.out.println("El valor ingresado no es valido");
+                System.out.println("Hasta luego");
             }
         }catch (Exception e){
             System.out.println("Solicitud invalida");
